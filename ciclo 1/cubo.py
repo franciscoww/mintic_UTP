@@ -19,11 +19,11 @@ for a in cubo:
 	for n in a:
     		print(n[1], end=', ')
 
-print('\n\n***Elementos primera fila c/cara***\n')
+print('\n\n***Elementos primera fila cada cara***\n')
 for b in cubo:
 	print(b[0],end=', ')
 
-print('\n\n***Elementos segunda fila c/cara***\n')
+print('\n\n***Elementos segunda fila cada cara***\n')
 for b in cubo:
 	print(b[1],end=', ')
 
