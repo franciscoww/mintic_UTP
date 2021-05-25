@@ -146,11 +146,11 @@ def borrarProducto (db:dict)->None:
     print(f'*Nuevo estado:* \n{dbProductos}')
 
 
-
 #baseProductos = agregarProducto(dbProductos)
 #baseProductos = agregarProducto(baseProductos)
 #baseProductos = agregarProducto(baseProductos)
 
 #agregarProducto(dbProductos)
 #mostrarInfoProducto(dbProductos)
-#borrarProducto(dbProductos)
+
+borrarProducto(dbProductos)

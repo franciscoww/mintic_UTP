@@ -12,16 +12,16 @@ def rent_car ( opcion : int , idCliente : int = 0 , idContrato : int =0, pago : 
     elif idCliente in db.keys():
         if opcion ==  1:
             db[idCliente][idContrato] = pago
-            return "{"+f"'cliente': {idCliente}, 'contrato': {idContrato}, 'abono': 0, 'pago': {pago}"+"}", db
+            return {f'cliente': {idCliente}, 'contrato': {idContrato}, 'abono': 0, 'pago': {pago}}, db
 
         if opcion == 2 and (idContrato in db[idCliente].keys()):
             porCancelar=db[idCliente][idContrato] - pago
             if pago == db[idCliente][idContrato]:
                 db[idCliente].pop(idContrato)
-                return "{"+f"'cliente': {idCliente}, 'contrato': {idContrato}, 'abono' {pago}, 'pago' {porCancelar}"
+                return {f"'cliente': {idCliente}, 'contrato': {idContrato}, 'abono': {pago}, 'pago': {porCancelar}"}
             else:
                 db[idCliente][idContrato] = porCancelar
-            return "{"+f"'cliente': {idCliente}, 'contrato': {idContrato}, 'abono' {pago}, 'pago' {porCancelar}"'}'
+            return {f"'cliente': {idCliente}, 'contrato': {idContrato}, 'abono': {pago}, 'pago': {porCancelar}"}
         else:
             return {f'{idContrato}': 'No existe el contrato'}, db
     else:
@@ -29,12 +29,22 @@ def rent_car ( opcion : int , idCliente : int = 0 , idContrato : int =0, pago : 
 
 #---Pruebas---
 
+
 msj , dbContratos = rent_car (0 , 1088)
 print (msj , dbContratos )
 
-msj , dbContratos = rent_car(1 , 1088 , 1, 300000) #, db=dbContratos 
+msj , dbContratos = rent_car(1 , 1088 , 1, 300000, db=dbContratos)  
 print (msj , dbContratos )
 
-msj , dbContratos = rent_car(2 , 1088 , 1, 25000.25487)# ,db= dbContratos 
+
+msj , dbContratos = rent_car(2 , 1088 , 1, 25000.25487)# db=dbContratos)
+print (msj , dbContratos)
+
+'''
+msj , dbContratos = rent_car(1 , 1088 , 2, 500000), db=dbContratos 
 print (msj , dbContratos )
+
+msj , dbContratos = rent_car(2 , 2054 , 5, 25000.25487 ), db= dbContratos 
+print (msj , dbContratos )
+'''
 
