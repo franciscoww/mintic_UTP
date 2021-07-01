@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Ciclo 2/test/src",
-        "Ciclo 2/JavaApplication1/src/javaapplication1"
+        "Ciclo 2/Ejercicio01/ejercicio01/src/main/java/co/edu/utp/misiontic2022/c2",
+        "Ciclo2/Ejercicio01/ejercicio01/src/main/java/co/edu/utp/misiontic2022/c2"
     ]
 }
