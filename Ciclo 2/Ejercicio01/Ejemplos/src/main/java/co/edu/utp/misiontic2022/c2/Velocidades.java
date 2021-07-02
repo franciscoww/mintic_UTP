@@ -12,7 +12,7 @@ public class Velocidades {
         System.out.print("Digite la velocidad a convertir: ");
         float velok = input.nextFloat();
 
-        float resultado = velok *1000 / 3600;
+        float resultado = velok * 1000 / 3600;
 
         System.out.printf("La velocidad es %d m/s\n", resultado);
 
