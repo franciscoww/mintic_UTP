@@ -14,7 +14,7 @@ public class Velocidades {
 
         float resultado = velok * 1000 / 3600;
 
-        System.out.printf("La velocidad es %d m/s\n", resultado);
+        System.out.printf("La velocidad es %f m/s\n", resultado);
 
         input.close();
         
