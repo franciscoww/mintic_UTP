@@ -1,0 +1,14 @@
+create table DEPT (
+	ID numeric,
+	NAME varchar(25),
+	constraint dept_pk primary key (ID)
+	);
+
+create table EMP (
+	ID numeric,
+	LAST_NAME varchar(25),
+	FIRST_NAME varchar(25),
+	DEPT_ID numeric(7),
+	constraint emp_pk primary key (ID),
+	constraint dept_fk foreign key (DEPT_ID) references DEPT(ID)
+	);
