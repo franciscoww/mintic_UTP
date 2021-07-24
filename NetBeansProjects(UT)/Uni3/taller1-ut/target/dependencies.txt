@@ -1,0 +1,4 @@
+digraph "co.edu.utp.misiontic2022.c2:taller1-ut:jar:1.0-SNAPSHOT" { 
+	"co.edu.utp.misiontic2022.c2:taller1-ut:jar:1.0-SNAPSHOT" -> "junit:junit:jar:4.11:test" ; 
+	"junit:junit:jar:4.11:test" -> "org.hamcrest:hamcrest-core:jar:1.3:test" ; 
+ } 
