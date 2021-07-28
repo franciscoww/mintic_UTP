@@ -92,8 +92,6 @@ public class App {
 
         public Double calcularPrecio() {
             // Código
-            Double adicion = 0.0;
-            return precioBase + adicion;
         }
     }
 
@@ -119,7 +117,6 @@ public class App {
         // Métodos
         public Double calcularPrecio() {
             // Código
-            Double mas;
         }
     }
 
