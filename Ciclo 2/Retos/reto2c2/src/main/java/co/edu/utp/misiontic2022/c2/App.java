@@ -64,35 +64,62 @@ public class App {
 
         public void adicionCalidadC() {
             if (this.calidadC == 'A') {
-                this.precioBase += 10;
+                setPrecioBase(getPrecioBase()+ 10);
             } else if (this.calidadC == 'B') {
-                this.precioBase += 8;
+                setPrecioBase(getPrecioBase()+ 8);
             } else if (this.calidadC == 'C') {
-                this.precioBase += 6;
+                setPrecioBase(getPrecioBase()+ 6);
             } else if (this.calidadC == 'D') {
-                this.precioBase += 5;
+                setPrecioBase(getPrecioBase()+ 5);
             } else if (this.calidadC == 'E') {
-                this.precioBase += 3;
+                setPrecioBase(getPrecioBase()+ 3);
             } else {
-                this.precioBase += 1;
+                setPrecioBase(getPrecioBase()+ 1);
             }
         }
 
         public void adicionPeso() {
             if (this.peso >= 0 && this.peso < 19) {
-                this.precioBase += 10;
+                setPrecioBase(getPrecioBase()+ 10);
             } else if (this.peso > 19 && this.peso < 49) {
-                this.precioBase += 50;
+                setPrecioBase(getPrecioBase()+ 50);
             } else if (this.peso > 49 && this.peso < 80) {
-                this.precioBase += 80;
+                setPrecioBase(getPrecioBase()+ 80);
             } else if (this.peso > 79) {
-                this.precioBase += 100;
+                setPrecioBase(getPrecioBase()+ 100);
             }
         }
 
         public Double calcularPrecio() {
             // Código
+            double totalCafe = getPrecioBase();
+            double totalCafeNacional ;
         }
+
+        public Double getPrecioBase() {
+            return precioBase;
+        }
+
+        public void setPrecioBase(Double precioBase) {
+            this.precioBase = precioBase;
+        }
+
+        public Integer getPeso() {
+            return peso;
+        }
+
+        public void setPeso(Integer peso) {
+            this.peso = peso;
+        }
+
+        public char getCalidadC() {
+            return calidadC;
+        }
+
+        public void setCalidadC(char calidadC) {
+            this.calidadC = calidadC;
+        }
+
     }
 
     public class CafeNacional extends Cafe {
@@ -107,6 +134,7 @@ public class App {
 
         public CafeNacional(Double precioBase, Integer peso) {
             super(precioBase, peso);
+            this.tostado = TOSTADO;
         }
 
         public CafeNacional(Double precioBase, Integer peso, char calidadC, boolean tostado) {
@@ -117,22 +145,31 @@ public class App {
         // Métodos
         public Double calcularPrecio() {
             // Código
+            double totalCafeNacional = getPrecioBase();
+            if (this.tostado == true) {
+                setPrecioBase(totalCafeNacional + 50.0);
+            }
+            return totalCafeNacional;
         }
     }
 
     public class CafeExportacion extends Cafe {
         // Constantes y Atributos
         private Integer CIF_BASE = 20;
+        private Boolean VERDE_BASE = false;
         private Integer cif;
-        private boolean verde = false;
+        private boolean verde;
 
         // Constructor
         public CafeExportacion() {
             this.cif = CIF_BASE;
+            this.verde = VERDE_BASE;
         }
 
         public CafeExportacion(Double precioBase, Integer peso) {
             super(precioBase, peso);
+            this.cif = CIF_BASE;
+            this.verde = VERDE_BASE;
         }
 
         public CafeExportacion(Double precioBase, Integer peso, char calidadC, Integer cif, boolean verde) {
@@ -144,6 +181,14 @@ public class App {
         // Métodos
         public Double calcularPrecio() {
             // Código
+            double totalCafeExportacion = getPrecioBase();
+            if (this.cif > 40) {
+                setPrecioBase(totalCafeExportacion * 1.3);
+            }
+            if (this.verde) {
+                setPrecioBase(totalCafeExportacion + 50);
+            }
+            return totalCafeExportacion;
         }
     }
     // Fin de la solución
