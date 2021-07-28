@@ -17,11 +17,6 @@ import javax.swing.border.EmptyBorder;
 
 public class VentanaCalculadora extends JFrame {
 
-	/**
-	 * generado
-	 */
-	private static final long serialVersionUID = 1583724102189855698L;
-
 	/** numero tecleado */
 	JTextField pantalla;
 
