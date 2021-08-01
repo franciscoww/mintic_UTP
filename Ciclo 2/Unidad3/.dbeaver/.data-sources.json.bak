@@ -11,7 +11,8 @@
 				"database": "/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad3/sqlite3/primerDB.db",
 				"url": "jdbc:sqlite:/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad3/sqlite3/primerDB.db",
 				"type": "dev",
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			}
 		}
 	},

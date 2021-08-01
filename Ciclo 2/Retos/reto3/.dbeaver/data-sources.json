@@ -1,17 +1,18 @@
 {
 	"folders": {},
 	"connections": {
-		"sqlite_jdbc-17ab04b47c2-b70eca7940d88aa": {
+		"sqlite_jdbc-17af2982471-2d146122897fa75c": {
 			"provider": "generic",
 			"driver": "sqlite_jdbc",
-			"name": "primerDB.db",
+			"name": "ProyectosConstruccion.db",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"database": "/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad3/sqlite3/primerDB.db",
-				"url": "jdbc:sqlite:/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad3/sqlite3/primerDB.db",
+				"database": "/home/francisco/Documentos/Programacion UTP/Ciclo 2/Retos/reto3/ProyectosConstruccion.db",
+				"url": "jdbc:sqlite:/home/francisco/Documentos/Programacion UTP/Ciclo 2/Retos/reto3/ProyectosConstruccion.db",
 				"type": "dev",
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			}
 		}
 	},
