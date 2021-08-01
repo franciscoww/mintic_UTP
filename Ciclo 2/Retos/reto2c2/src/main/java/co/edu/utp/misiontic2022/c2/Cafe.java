@@ -5,9 +5,9 @@ public class Cafe {
     private static final Integer PESO_BASE = 5;
     private static final Character CALIDAD_C_BASE = 'F';
     private static final Double PRECIO_BASE = 100.0;
-    private Double precioBase;
-    private Integer peso;
-    private Character calidadC;
+    protected Double precioBase;
+    protected Integer peso;
+    protected Character calidadC;
 
     // Constructores
     public Cafe() {
@@ -30,24 +30,24 @@ public class Cafe {
 
     // Metodos
     public void comprobarCalidadC(char calidadC) {
-        if (calidadC < 'F' && calidadC >= 'A') {
+        if (calidadC != 'F') {
             this.calidadC = calidadC;
         } else {
             this.calidadC = CALIDAD_C_BASE;
         }
     }
 
-    public Double adicionCalidadC() {
+    public Double adicionCalidadC(char calidadC) {
         Double adicionxCalidad = 0.0;
-        if (this.calidadC == 'A') {
+        if (calidadC == 'A') {
             adicionxCalidad += 10;
-        } else if (this.calidadC == 'B') {
+        } else if (calidadC == 'B') {
             adicionxCalidad += 8;
-        } else if (this.calidadC == 'C') {
+        } else if (calidadC == 'C') {
             adicionxCalidad += 6;
-        } else if (this.calidadC == 'D') {
+        } else if (calidadC == 'D') {
             adicionxCalidad += 5;
-        } else if (this.calidadC == 'E') {
+        } else if (calidadC == 'E') {
             adicionxCalidad += 3;
         } else {
             adicionxCalidad += 1;
@@ -55,15 +55,15 @@ public class Cafe {
         return adicionxCalidad;
     }
 
-    public Double adicionPeso() {
+    public Double adicionPeso(Integer peso) {
         Double adicionxPeso = 0.0;
-        if (this.peso >= 0 && this.peso < 19) {
+        if (peso >= 0 && peso < 19) {
             adicionxPeso += 10;
-        } else if (this.peso > 19 && this.peso < 49) {
+        } else if (peso > 19 && peso < 49) {
             adicionxPeso += 50;
-        } else if (this.peso > 49 && this.peso < 80) {
+        } else if (peso > 49 && peso < 80) {
             adicionxPeso += 80;
-        } else if (this.peso > 79) {
+        } else if (peso > 79) {
             adicionxPeso += 100;
         }
         return adicionxPeso;
@@ -71,20 +71,22 @@ public class Cafe {
 
     public Double calcularPrecio() {
         // Código
-        CafeNacional cafeNacional = new CafeNacional();
-        CafeExportacion cafeExportacion = new CafeExportacion();
 
-        Double additionalparam = adicionCalidadC() + adicionPeso();
-        double pbaseCafe = getPrecioBase();
-        double cnac = cafeNacional.calcularPrecio();
-        double cexp = cafeExportacion.calcularPrecio();
+        Double addCalidad = adicionCalidadC(calidadC);
+        Double addPeso = adicionPeso(peso);
 
-        double totalCafe = additionalparam + cnac + cexp;
-        return totalCafe;
+        return addCalidad + addPeso + precioBase;
     }
 
     public Double getPrecioBase() {
         return precioBase;
     }
 
+    public Integer getPeso() {
+        return peso;
+    }
+
+    public Character getCalidadC() {
+        return calidadC;
+    }
 }

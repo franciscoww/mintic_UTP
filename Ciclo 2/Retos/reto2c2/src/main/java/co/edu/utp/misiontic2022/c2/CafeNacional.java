@@ -22,12 +22,16 @@ public class CafeNacional extends Cafe {
     }
 
     // Métodos
+
+
     public Double calcularPrecio() {
         // Código
+        Double addCalidad = adicionCalidadC(getCalidadC());
+        Double addPeso = adicionPeso(getPeso());
         Double adicionTostado = 0.0;
         if (this.tostado == true) {
             adicionTostado += 50;
         }
-        return 0.0;
+        return addCalidad + addPeso + adicionTostado + getPrecioBase();
     }
 }

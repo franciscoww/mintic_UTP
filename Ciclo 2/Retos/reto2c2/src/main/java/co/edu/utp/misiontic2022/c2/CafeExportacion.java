@@ -29,13 +29,17 @@ public class CafeExportacion extends Cafe {
     // Métodos
     public Double calcularPrecio() {
         // Código
-        Double adicionCifVerde = 0.0;
+        Double adicionCif = 0.0;
+        Integer addVerde = 0;
         if (this.cif > 40) {
-            adicionCifVerde = getPrecioBase() * 1.3;
+            adicionCif = getPrecioBase() * 0.3;
         }
-        if (this.verde) {
-            adicionCifVerde = getPrecioBase() + 50;
+        if (this.verde == true) {
+            addVerde += 50;
         }
-        return 0.0;
+        Double addCalidad = adicionCalidadC(getCalidadC());
+        Double addPeso = adicionPeso(getPeso());
+
+        return addCalidad + addPeso + addVerde + adicionCif + getPrecioBase();
     }
 }
