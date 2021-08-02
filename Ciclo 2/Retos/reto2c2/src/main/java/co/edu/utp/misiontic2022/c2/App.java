@@ -1,11 +1,6 @@
 package co.edu.utp.misiontic2022.c2;
 
 public class App {
-
-    // Fin de la solución
-
-    // Esta clase es para las pruebas, no se debe subir como parte de la solución
-    // public class App {
     public static void main(String[] args) {
         // Prueba 1
         Cafe cafe[] = new Cafe[5];
@@ -16,6 +11,7 @@ public class App {
         cafe[4] = new Cafe(550.0, 20, 'D');
         PrecioTotal solucion1 = new PrecioTotal(cafe);
         solucion1.mostrarTotales();
+        System.out.println();
 
         Cafe cafe2[] = new Cafe[10];
         cafe2[0] = new Cafe(250.0, 50, 'D');

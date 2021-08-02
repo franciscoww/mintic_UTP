@@ -1,19 +1,14 @@
 package co.edu.utp.misiontic2022.c2;
 
 public class PrecioTotal {
-    // Atributos
-    Double totalCafe;
-    Double totalCafeNacional;
-    Double totalCafeExportacion;
+    Double totalCafe = 0.0;
+    Double totalCafeNacional = 0.0;
+    Double totalCafeExportacion = 0.0;
     Cafe[] listaCafe;
 
     // Constructor
     PrecioTotal(Cafe[] plistaCafe) {
-        // Código
-    }
-
-    public void mostrarTotales() {
-        // Código
+        this.listaCafe = plistaCafe;
         for (Cafe cafe : listaCafe) {
 
             if (cafe instanceof Cafe) {
@@ -26,6 +21,11 @@ public class PrecioTotal {
                 totalCafeExportacion = totalCafeExportacion + cafe.calcularPrecio();
             }
         }
+    }
+
+    public void mostrarTotales() {
+        // Código
+
         // Mostramos los resultados
         System.out.println("La suma del precio del café es de " + totalCafe);
         System.out.println("La suma del precio del café tipo nacional es de " + totalCafeNacional);
