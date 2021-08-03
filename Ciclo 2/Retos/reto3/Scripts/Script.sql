@@ -45,21 +45,6 @@ ORDER BY
 	'# Proyectos',
 	Lider ;
 	
-
---Punto 4
-SELECT
-	mc.ID_MaterialConstruccion,
-	Nombre_Material ,
-	c.Cantidad,
-	Precio_Unidad,
-	c.Cantidad * Precio_Unidad as Precio_Total
-FROM
-	MaterialConstruccion mc,
-	Compra c
-WHERE c.ID_Proyecto IN (10, 14, 23, 24, 38, 50, 29)
-ORDER BY
-	c.ID_Proyecto ASC,
-	Precio_Unidad DESC;
 	
 --Punto 4 (Completo)
 SELECT
@@ -80,4 +65,24 @@ ORDER BY
 	P.ID_Proyecto ASC,
 	M.Precio_Unidad DESC;
 
+
 --Punto 5
+SELECT DISTINCT 
+	P.ID_Proyecto,
+	P.Ciudad,
+	P.Clasificacion,
+	SUM(C.Cantidad * MC.Precio_Unidad) AS 'Costo_Proyecto'
+FROM
+	Proyecto AS P
+INNER JOIN 	MaterialConstruccion AS MC ON MC.ID_MaterialConstruccion = C.ID_MaterialConstruccion 
+INNER JOIN  Compra AS C ON C.ID_Proyecto  = P.ID_Proyecto 
+WHERE 
+	P.Ciudad IN ('Monteria','Santa Marta')
+GROUP BY 
+	P.ID_Proyecto 
+HAVING 
+	SUM(C.Cantidad * MC.Precio_Unidad) > 70000
+ORDER BY 
+	P.Ciudad ,
+	P.Clasificacion,
+	P.ID_Proyecto;
