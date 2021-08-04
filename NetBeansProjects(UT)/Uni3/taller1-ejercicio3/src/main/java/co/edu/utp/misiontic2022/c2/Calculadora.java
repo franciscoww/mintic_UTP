@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.googlecode.wicket.jquery.ui.kendo.splitter.BorderLayout;
 
 // Crear una interfaz gráfica para una calculadora, con los 
 // botones de los números del 0 al 9 y las operaciones básicas. 

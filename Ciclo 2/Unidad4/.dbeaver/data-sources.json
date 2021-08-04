@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17b13808016-ca2797c2fe98f6e": {
+			"provider": "generic",
+			"driver": "sqlite_jdbc",
+			"name": "bookShop.db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad4/bookShop.db",
+				"url": "jdbc:sqlite:/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad4/bookShop.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
