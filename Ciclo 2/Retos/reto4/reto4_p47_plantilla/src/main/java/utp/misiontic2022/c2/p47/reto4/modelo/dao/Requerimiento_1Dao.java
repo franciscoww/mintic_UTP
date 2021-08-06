@@ -16,7 +16,7 @@ public class Requerimiento_1Dao {
         ArrayList<Requerimiento_1> requer1 = new ArrayList<>();
         Requerimiento_1 registro1 = null;
 
-        String sql = "SELECT Nombre || ' ' || Primer_Apellido as Lider,Cargo,"
+        String sql = "SELECT Nombre || ' ' || Primer_Apellido as Lider,Cargo, "
                         +"COUNT(p.ID_Lider) as ',Proyectos' "
                     +"FROM Lider l,Proyecto p "
                     +"WHERE p.Constructora = 'Arquitectura S.A.' and p.ID_Lider = l.ID_Lider "
