@@ -29,14 +29,12 @@ ORDER BY
 
 
 
-
-
 --Punto 3
 SELECT 
 	Nombre || ' ' || Primer_Apellido as Lider,
 	Cargo,
 	COUNT(p.ID_Lider) 
-as ',Proyectos'
+as '# Proyectos' 
 FROM
 	Lider l,
 	Proyecto p
@@ -47,7 +45,9 @@ GROUP BY
 	l.ID_Lider
 ORDER BY
 	Cargo,
+	'# Proyectos',
 	Lider ;
+	
 	
 
 --Punto 4 (Completo)
@@ -71,22 +71,19 @@ ORDER BY
 
 
 --Punto 5
-SELECT
-	DISTINCT 
+SELECT DISTINCT 
 	P.ID_Proyecto,
 	P.Ciudad,
 	P.Clasificacion,
 	SUM(C.Cantidad * MC.Precio_Unidad) AS 'Costo_Proyecto'
 FROM
 	Proyecto AS P
-INNER JOIN MaterialConstruccion AS MC ON
-	MC.ID_MaterialConstruccion = C.ID_MaterialConstruccion
-INNER JOIN Compra AS C ON
-	C.ID_Proyecto = P.ID_Proyecto
+INNER JOIN 	MaterialConstruccion AS MC ON MC.ID_MaterialConstruccion = C.ID_MaterialConstruccion 
+INNER JOIN  Compra AS C ON C.ID_Proyecto  = P.ID_Proyecto 
 WHERE 
-	P.Ciudad IN ('Monteria', 'Santa Marta')
+	P.Ciudad IN ('Monteria','Santa Marta')
 GROUP BY 
-	P.ID_Proyecto
+	P.ID_Proyecto 
 HAVING 
 	SUM(C.Cantidad * MC.Precio_Unidad) > 70000
 ORDER BY 

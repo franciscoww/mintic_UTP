@@ -4,5 +4,6 @@
         "Ciclo 2/Ejercicio01/ejercicio01/src/main/java/co/edu/utp/misiontic2022/c2",
         "Ciclo2/Ejercicio01/ejercicio01/src/main/java/co/edu/utp/misiontic2022/c2"
     ],
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.dependency.packagePresentation": "hierarchical"
 }

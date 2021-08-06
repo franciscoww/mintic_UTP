@@ -1,37 +1,4 @@
---Punto1
-SELECT
-	DISTINCT Documento_Identidad,
-	Nombre || ' ' || Primer_Apellido || ' ' || Segundo_Apellido as Lider, 
-	Ciudad_Residencia,
-	Salario
-FROM
-	Lider l
-WHERE
-	Cargo = 'Coordinador'
-ORDER by
-	Documento_Identidad ;
-
-
---Punto 2
-SELECT
-	DISTINCT Constructora,
-	Clasificacion,
-	Ciudad
-FROM
-	Proyecto p
-WHERE
-	Banco_Vinculado = 'Colmena'
-ORDER BY
-	Constructora,
-	Clasificacion,
-	Ciudad ;
-
-
-
-
-
-
---Punto 3
+--Requerimiento 1
 SELECT 
 	Nombre || ' ' || Primer_Apellido as Lider,
 	Cargo,
@@ -49,8 +16,7 @@ ORDER BY
 	Cargo,
 	Lider ;
 	
-
---Punto 4 (Completo)
+--Requerimeinto 2
 SELECT
 	M.ID_MaterialConstruccion,
 	M.Nombre_Material,
@@ -70,7 +36,7 @@ ORDER BY
 	M.Precio_Unidad DESC;
 
 
---Punto 5
+--Requerimiento 3
 SELECT
 	DISTINCT 
 	P.ID_Proyecto,

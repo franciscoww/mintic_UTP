@@ -1,15 +1,15 @@
 {
 	"folders": {},
 	"connections": {
-		"sqlite_jdbc-17b1d0110ac-2b491e211c30c160": {
+		"sqlite_jdbc-17b13894e0e-4426d9fbda087db8": {
 			"provider": "generic",
 			"driver": "sqlite_jdbc",
-			"name": "ProyectosConstruccion.db",
+			"name": "bookShop.db",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"database": "/home/francisco/Documentos/Programacion UTP/Ciclo 2/Retos/reto4/reto4_p47_plantilla/ProyectosConstruccion.db",
-				"url": "jdbc:sqlite:/home/francisco/Documentos/Programacion UTP/Ciclo 2/Retos/reto4/reto4_p47_plantilla/ProyectosConstruccion.db",
+				"database": "/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad4/bookShop.db",
+				"url": "jdbc:sqlite:/home/francisco/Documentos/Programacion UTP/Ciclo 2/Unidad4/bookShop.db",
 				"type": "dev",
 				"auth-model": "native",
 				"handlers": {}
